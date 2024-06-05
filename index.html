@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>GRT WADAPP</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PitchBlack</title>
     <style>
         body {
             margin: 0;
@@ -17,16 +17,12 @@
             justify-content: center;
             align-items: center;
         }
-          .container {
-             position: relative;
-             text-align: center;
-             display: flex;
-             justify-content: center;
-             align-items: flex-start; /* Align content at the top */
-       }
-
-        }
-
+        .container {
+            position: relative;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align content at the top */
         }
         img.phone-image {
             position: absolute;
@@ -51,27 +47,38 @@
             justify-content: center;
             align-items: center;
         }
-
-
         .time-overlay {
-             position: absolute;
-             top: 10px; /* Adjust as needed */
-             right: 15px; /* Adjust as needed */
-             color: white;
-             font-size: 16px;
-             background-color: black; /* Add this line */
-             padding: 5px; /* Optional: Add padding for better readability */
-         }
-    </style>
-    <hta:application applicationname="PitchBlack" scroll="no" singleinstance="yes">
-    <script type="text/javascript">
-        function openURL() {
-            var shell = new ActiveXObject("WScript.Shell");
-            shell.run("https://www.google.com");
+            position: absolute;
+            top: 10px; /* Adjust as needed */
+            right: 15px; /* Adjust as needed */
+            color: white;
+            font-size: 16px;
+            background-color: black; /* Add this line */
+            padding: 5px; /* Optional: Add padding for better readability */
         }
-    </script>
+        iframe {
+            position: absolute;
+            top: 25%; /* Adjust as needed */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2; /* Set it above the phone image */
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <img class="phone-image" src="phone.png" alt="Phone" width="946" height="1664">
+        <iframe src="0.html" width="720" height="1280" frameborder="0"></iframe>
+        <div class="time-overlay"><span id="time"></span></div>
+    </div>
+    <map name="image-map">
+        <area target="_self" alt="" title="" href="0.html" coords="365,539,96" shape="circle">
+        <area target="_self" alt="" title="1" href="1.html" coords="680,993,586,897" shape="rect">
+        <area target="_self" alt="" title="2" href="2.html" coords="130,1173,50,1059" shape="0">
+        <area target="_self" alt="" title="3" href="3.html" coords="234,1063,308,1173" shape="0">
+        <area target="_self" alt="" title="4" href="4.html" coords="404,1069,490,1177" shape="0">
+        <area target="_self" alt="" title="5" href="5.html" coords="588,1061,664,1175" shape="0">
+    </map>
 
     <script>
         function updateTime() {
@@ -87,30 +94,5 @@
     <script type="text/javascript">
         window.resizeTo(440, 440);
     </script>
-    <div style="position: relative; display: flex; justify-content: center; align-items: center; height: 100vh;">
-
-        <img id="img1" src="phone.png " alt="Workplace" usemap="#image-map" width="946" height="1664" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-
-
-         <div class="container">
-        <img src="0.png" alt="0" style="width: 100%;">
-        <img id="0" src="0.png" alt="0" usemap="#image-map" width="720" height="1280" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-        <div class="time-overlay"><span id="time"></span></div>
-        </div>
-    </div>
-    <map name="image-map">
-    <area target="_self" alt="" title="" href="0.html" coords="365,539,96" shape="circle">
-    <area target="_self" alt="" title="1" href="1.html" coords="680,993,586,897" shape="rect">
-    <area target="_self" alt="" title="2" href="2.html" coords="130,1173,50,1059" shape="0">
-    <area target="_self" alt="" title="3" href="3.html" coords="234,1063,308,1173" shape="0">
-    <area target="_self" alt="" title="4" href="4.html" coords="404,1069,490,1177" shape="0">
-    <area target="_self" alt="" title="5" href="5.html" coords="588,1061,664,1175" shape="0">
-</map>
-
-        
-    </map>
-
 </body>
 </html>
-
-
